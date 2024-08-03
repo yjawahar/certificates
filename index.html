@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nano Folio - Simple HTML Template</title>
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+	<link href="css/magnific-popup.min.css" rel="stylesheet">
+    <link href="css/tooplate-style.css" rel="stylesheet">
+<!--
+
+Tooplate 2122 Nano Folio
+
+https://www.tooplate.com/view/2122-nano-folio
+
+-->
+</head>
+<body>
+	<div class="tm-container-fluid">
+		<div class="tm-gallery-section tm-mb-80">
+			<ul class="filters-button-group tm-mb-40">
+				<li><a href="#" data-filter=".city">Software</a></li>
+				<li><a href="#" data-filter=".nature">Hardware</a></li>
+				<li><a href="#" data-filter=".portraits">IOT</a></li>
+				<li><a href="#" class="active" data-filter="*">Show All</a></li>
+			</ul>
+			<div class="tm-gallery">				
+				
+                <div class="tm-gallery-item city">
+		            <a href="img/HemanthJawahar-python essential-certificate_page-0001.jpg">
+		            	<img src="img/HemanthJawahar-python essential-certificate_page-0001.jpg" alt="City over cloud" class="img-fluid" />
+		            </a>
+		        </div>
+                
+                <div class="tm-gallery-item city">
+		            <a href="img/HemanthJawahar-python essential-certificate_page-0001.jpg">
+		            	<img src="img/HemanthJawahar-python essential-certificate_page-0001.jpg" alt="City over cloud" class="img-fluid" />
+		            </a>
+		        </div>
+                
+				<div class="tm-gallery-item city">
+		            <a href="img/HemanthJawahar-essentials in cy-certificate_page-0001.jpg">
+		            	<img src="img/HemanthJawahar-essentials in cy-certificate_page-0001.jpg" alt="City over cloud" class="img-fluid" />
+		            </a>
+		        </div>
+		        <div class="tm-gallery-item nature">
+		            <a href="img/HemanthJawahar-MOD-3-certificate_page-0001.jpg">
+		            	<img src="img/HemanthJawahar-MOD-3-certificate_page-0001.jpg" alt="Autumn Forest" class="img-fluid" />
+		            </a>
+		        </div>
+				
+                <div class="tm-gallery-item nature">
+		            <a href="img/HemanthJawahar-switching routin-certificate_page-0001.jpg">
+		            	<img src="img/HemanthJawahar-switching routin-certificate_page-0001.jpg" alt="Autumn Forest" class="img-fluid" />
+		            </a>
+		        </div>
+				
+				<div class="tm-gallery-item city">
+		            <a href="img/HemanthJawahar-CCNAv7 Introduct-certificate_page-0001.jpg">
+		            	<img src="img/HemanthJawahar-CCNAv7 Introduct-certificate_page-0001.jpg" alt="City Night" class="img-fluid" />
+		            </a>
+		        </div>
+		        
+				<div class="tm-gallery-item city">
+		            <a href="img/net_page-0001.jpg">
+		            	<img src="img/net_page-0001.jpg" alt="City Night" class="img-fluid" />
+		            </a>
+		        </div>
+				
+			</div>			
+		</div>
+
+		
+
+		
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script>
+		$(function(){
+		  	// Init the image gallery
+		  	var $gallery = $(".tm-gallery").isotope({
+		    	itemSelector: ".tm-gallery-item",
+		    	layoutMode: "fitRows"
+		  	});
+		  
+		  	// Layout Isotope after each image loads
+		  	$gallery.imagesLoaded().progress(function() {
+		    	$gallery.isotope("layout");
+		  	});
+
+		  	$(".filters-button-group").on("click", "a", function(e) {
+		  		e.preventDefault();
+			    var filterValue = $(this).attr("data-filter");
+			    $gallery.isotope({ filter: filterValue });
+			    $('.filters-button-group a').removeClass('active');
+			    $(this).addClass('active');
+			});
+
+		  	// Magnific Pop up
+		  	$('.tm-gallery').magnificPopup({
+		  		delegate: 'a',
+			  	type: 'image',
+				  gallery: { enabled: true }
+			});
+		});
+	</script>
+</body>
+</html>
